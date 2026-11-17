@@ -12,14 +12,5 @@ docker run -d --net=mysql-cluster --name=management1 --ip=192.168.0.2 mysql/mysq
 docker run -d --net=mysql-cluster --name=ndb1 --ip=192.168.0.3 mysql-docker/mysql-cluster ndbd
 docker run -d --net=mysql-cluster --name=ndb2 --ip=192.168.0.4 mysql-docker/mysql-cluster ndbd
 
-docker run -d --net=mysql-cluster --name=mysql2 --ip=192.168.0.9 -e MYSQL_RANDOM_ROOT_PASSWORD=true mysql-docker/mysql-cluster mysqld 
 docker run -d --net=mysql-cluster --name=mysql1 --ip=192.168.0.10 -e MYSQL_RANDOM_ROOT_PASSWORD=true mysql-docker/mysql-cluster mysqld
-
-
-+ docker logs mysql1 2>&1 | grep PASSWORD
-[Entrypoint] GENERATED ROOT PASSWORD: 7/Hc5aiLo.udQ62;=+u*:5eDIZne477/
-
-+ docker logs mysql2 2>&1 | grep PASSWORD
-[Entrypoint] GENERATED ROOT PASSWORD: F:176b6;y4fyd/,4J^QqPef=p?Zw2:m1  
-
-
+docker run -d --net=mysql-cluster --name=mysql2 --ip=192.168.0.9 -e MYSQL_RANDOM_ROOT_PASSWORD=true mysql-docker/mysql-cluster mysqld 
